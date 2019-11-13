@@ -9,16 +9,12 @@
 ### Use case:
 Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.  If fed the word `password`, `brutalist` will generate 773,604 unique custom permutations of the word, using various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
 
-## Install via Git:
+## Install:
 1. `git clone https://github.com/phx/brutalist.git`
 2. `cd brutalist`
 3. `sudo cp brutalist.py /usr/local/bin/`
 
 You can just as easily execute it where it stands or manually copy it elsewhere in your `$PATH`.
-
-## Install via Homebrew:
-1. `brew tap phx/brutalist`
-2. `brew install brutalist`
 
 ## Run:
 ```
