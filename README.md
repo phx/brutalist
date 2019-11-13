@@ -18,7 +18,7 @@ You can just as easily execute it where it stands or manually copy it elsewhere 
 
 ## Install via Homebrew on MacOS:
 1. `brew tap phx/brutalist`
-2. `brew install brutality`
+2. `brew install brutalist`
 
 ## Run:
 ```
