@@ -232,7 +232,15 @@ if __name__ == '__main__':
             after = up[ch+1:]
             uchar = up[ch].replace(char, char.lower())
             subs.append(before + uchar + after)
+            subs.append(before.upper() + uchar + after.upper())
+            subs.append(before.lower() + uchar + after.lower())
+            subs.append(before.upper() + uchar + after.lower())
+            subs.append(before.lower() + uchar + after.upper())
             resubs(before + uchar + after)
+            resubs(before.upper() + uchar + after.upper())
+            resubs(before.lower() + uchar + after.lower())
+            resubs(before.upper() + uchar + after.lower())
+            resubs(before.lower() + uchar + after.upper())
             get_subs(ch, uchar)
 
         # switch to lower
@@ -244,7 +252,15 @@ if __name__ == '__main__':
             after = lp[ch+1:]
             lchar = lp[ch].replace(char, char.upper())
             subs.append(before + lchar + after)
+            subs.append(before.upper() + lchar + after.upper())
+            subs.append(before.lower() + lchar + after.lower())
+            subs.append(before.upper() + lchar + after.lower())
+            subs.append(before.lower() + lchar + after.upper())
             resubs(before + lchar + after)
+            resubs(before.upper() + lchar + after.upper())
+            resubs(before.lower() + lchar + after.lower())
+            resubs(before.upper() + lchar + after.lower())
+            resubs(before.lower() + lchar + after.upper())
             get_subs(ch, lchar)
 
         unique_subs = set(subs)
