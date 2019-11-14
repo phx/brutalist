@@ -27,66 +27,39 @@ def show_help():
     print("       -i [input file]    file is used as input.\n")
     sys.exit()
 
+CHARACTERS = {
+        r'[Aa]': ['4', '@'],
+        r'[Bb]': ['3', '13'],
+        r'[Cc]': ['('],
+        r'[Dd]': ['[)'],
+        r'[Ee]': ['3'],
+        r'[Ff]': ['|='],
+        r'[Gg]': ['6'],
+        r'[Hh]': ['|-|'],
+        r'[Ii]': ['1', '|'],
+        r'[Jj]': ['.]'],
+        r'[Kk]': ['|<'],
+        r'[Ll]': ['1'],
+        r'[Mm]': ['|Y|'],
+        r'[Nn]': ['/V'],
+        r'[Oo]': ['0'],
+        r'[Pp]': ['|>'],
+        r'[Qq]': ['0'],
+        r'[Rr]': ['|2'],
+        r'[Ss]': ['5', '$'],
+        r'[Tt]': ['7', '+'],
+        r'[Uu]': ['_'],
+        r'[Xx]': ['}-{'],
+        r'[Yy]': ['`/'],
+        r'[Zz]': ['2']
+    }
+
 def resubs(spass):
     spass = spass.strip()
-    tmp = re.sub(r'[Aa]', '4', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Aa]', '@', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Bb]', '3', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Bb]', '13', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Cc]', '(', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Dd]', '[)', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ee]', '3', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ff]', '|=', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Gg]', '6', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Hh]', '|-|', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ii]', '1', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ii]', '|', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Jj]', '.]', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Kk]', '|<', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ll]', '1', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Mm]', '|Y|', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Nn]', '/V', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Oo]', '0', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Pp]', '|>', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Qq]', '0,', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Rr]', '|2', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ss]', '5', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Ss]', '$', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Tt]', '7', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Tt]', '+', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Uu]', '[_]', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Xx]', '}-{', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Yy]', '`/', spass)
-    subappend(tmp)
-    tmp = re.sub(r'[Zz]', '2', spass)
-    subappend(tmp)
+    for key in CHARACTERS:
+        for x in CHARACTERS[key]:
+            tmp = re.sub(key, x, spass)
+            subappend(tmp)
 
 def subappend(tmp):
     tmp = tmp.strip()
@@ -97,35 +70,10 @@ def subappend(tmp):
 def get_subs(ch, char):
     spass = before + char + after
     spass = spass.strip()
-    subs.append(re.sub(r'[Aa]', '4', spass))
-    subs.append(re.sub(r'[Aa]', '@', spass))
-    subs.append(re.sub(r'[Bb]', '3', spass))
-    subs.append(re.sub(r'[Bb]', '13', spass))
-    subs.append(re.sub(r'[Cc]', '(', spass))
-    subs.append(re.sub(r'[Dd]', '[)', spass))
-    subs.append(re.sub(r'[Ee]', '3', spass))
-    subs.append(re.sub(r'[Ff]', '|=', spass))
-    subs.append(re.sub(r'[Gg]', '6', spass))
-    subs.append(re.sub(r'[Hh]', '|-|', spass))
-    subs.append(re.sub(r'[Ii]', '1', spass))
-    subs.append(re.sub(r'[Ii]', '|', spass))
-    subs.append(re.sub(r'[Jj]', '.]', spass))
-    subs.append(re.sub(r'[Kk]', '|<', spass))
-    subs.append(re.sub(r'[Ll]', '1', spass))
-    subs.append(re.sub(r'[Mm]', '|Y|', spass))
-    subs.append(re.sub(r'[Nn]', '/V', spass))
-    subs.append(re.sub(r'[Oo]', '0', spass))
-    subs.append(re.sub(r'[Pp]', '|>', spass))
-    subs.append(re.sub(r'[Qq]', '0,', spass))
-    subs.append(re.sub(r'[Rr]', '|2', spass))
-    subs.append(re.sub(r'[Ss]', '5', spass))
-    subs.append(re.sub(r'[Ss]', '$', spass))
-    subs.append(re.sub(r'[Tt]', '7', spass))
-    subs.append(re.sub(r'[Tt]', '+', spass))
-    subs.append(re.sub(r'[Uu]', '[_]', spass))
-    subs.append(re.sub(r'[Xx]', '}-{', spass))
-    subs.append(re.sub(r'[Yy]', '`/', spass))
-    subs.append(re.sub(r'[Zz]', '2', spass))
+    for key in CHARACTERS:
+        for x in CHARACTERS[key]:
+            subs.append(re.sub(key, x, spass))
+
     c = char.lower()
     for sc in range(len(spass)):
         b = spass[:sc]
