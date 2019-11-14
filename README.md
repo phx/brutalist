@@ -12,7 +12,7 @@ Let's say you come across an outdated password in an old credential dump, but th
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist.git`
 2. `cd brutalist`
-3. `sudo cp brutalist.py /usr/local/bin/`
+3. `sudo cp brutalist.py /usr/local/bin/brutalist`
 
 You can just as easily execute it where it stands or manually copy it elsewhere in your `$PATH`.
 
