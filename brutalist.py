@@ -126,59 +126,59 @@ def get_subs(ch, char):
     subs.append(re.sub(r'[Xx]', '}-{', spass))
     subs.append(re.sub(r'[Yy]', '`/', spass))
     subs.append(re.sub(r'[Zz]', '2', spass))
-    c = char.lower()
+    lower_char = char.lower()
     for sc in range(len(spass)):
         b = spass[:sc]
         a = spass[sc+1:]
         if ch == sc:
-            if c == 'a':
+            if lower_char == 'a':
                 subs.append(b + '4' + a)
                 subs.append(b + '@' + a)
-            if c == 'b':
+            if lower_char == 'b':
                 subs.append(b + '3' + a)
                 subs.append(b + '13' + a)
-            if c == 'c':
+            if lower_char == 'c':
                 subs.append(b + '(' + a)
-            if c == 'd':
+            if lower_char == 'd':
                 subs.append(b + '[)' + a)
-            if c == 'e':
+            if lower_char == 'e':
                 subs.append(b + '3' + a)
-            if c == 'f':
+            if lower_char == 'f':
                 subs.append(b + '|=' + a)
-            if c == 'g':
+            if lower_char == 'g':
                 subs.append(b + '6' + a)
-            if c == 'h':
+            if lower_char == 'h':
                 subs.append(b + '|-|' + a)
-            if c == 'i':
+            if lower_char == 'i':
                 subs.append(b + '|' + a)
                 subs.append(b + '1' + a)
-            if c == 'l':
+            if lower_char == 'l':
                 subs.append(b + 'l' + a)
-            if c == 'm':
+            if lower_char == 'm':
                 subs.append(b + '|Y|' + a)
-            if c == 'n':
+            if lower_char == 'n':
                 subs.append(b + '/V' + a)
-            if c == 'o':
+            if lower_char == 'o':
                 subs.append(b + '0' + a)
-            if c == 'p':
+            if lower_char == 'p':
                 subs.append(b + '|>' + a)
-            if c == 'q':
+            if lower_char == 'q':
                 subs.append(b + '0,' + a)
-            if c == 'r':
+            if lower_char == 'r':
                 subs.append(b + '|2' + a)
-            if c == 's':
+            if lower_char == 's':
                 subs.append(b + '5' + a)
                 subs.append(b + '$' + a)
-            if c == 't':
+            if lower_char == 't':
                 subs.append(b + '7' + a)
                 subs.append(b + '+' + a)
-            if c == 'u':
+            if lower_char == 'u':
                 subs.append(b + '[_]' + a)
-            if c == 'x':
+            if lower_char == 'x':
                 subs.append(b + '}-{' + a)
-            if c == 'y':
+            if lower_char == 'y':
                 subs.append(b + '`/' + a)
-            if c == 'z':
+            if lower_char == 'z':
                 subs.append(b + '2' + a)
 
 
@@ -200,13 +200,13 @@ if __name__ == '__main__':
             for password in passwords:
                 password_list.append(password.strip())
         except:
-            show_help
+            show_help()
     elif len(sys.argv) == 2:
         try:
             password_list.append(sys.argv[1].strip())
             # password = sys.argv[1].strip()
         except:
-            show_help
+            show_help()
     elif len(sys.argv) == 3:
         try:
             password_file = sys.argv[3]
@@ -214,19 +214,19 @@ if __name__ == '__main__':
                 for line in fp:
                     password_list.append(line.strip())
         except:
-            show_help
-    
+            show_help()
+
     passwords = set(password_list)
 
     subs = []
 
-    for password in passwords:    
+    for password in passwords:
         resubs(password)
-        
+
         # switch to upper
         up = password.upper()
         resubs(up)
-        for ch in range(len(up)):
+        for ch, _ in enumerate(up):
             before = up[:ch]
             char = up[ch]
             after = up[ch+1:]
@@ -246,7 +246,7 @@ if __name__ == '__main__':
         # switch to lower
         lp = password.lower()
         resubs(lp)
-        for ch in range(len(lp)):
+        for ch, _ in enumerate(lp):
             before = lp[:ch]
             char = lp[ch]
             after = lp[ch+1:]
@@ -269,8 +269,8 @@ if __name__ == '__main__':
         numbers = '0123456789'
         special_characters = '!@#$%^&*+-_.;~()[]'
 
-        for ch in range(len(numbers)):
-            if 9 > ch >= 0:    
+        for ch, _ in enumerate(numbers):
+            if 9 > ch >= 0:
                 number_suffixes.append(numbers[ch-1:ch+2])
         number_suffixes.remove('')
 
@@ -291,4 +291,3 @@ if __name__ == '__main__':
                 for num in numbers:
                     print(sub + num + c)
                     print(sub + num + num + c)
-
