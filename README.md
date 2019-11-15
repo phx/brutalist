@@ -1,13 +1,13 @@
 ![Platform: ALL](https://img.shields.io/badge/platform-ALL-green)
 ![Dependencies: python3+](https://img.shields.io/badge/dependencies-python3+-blue)
-![Version: 1.0](https://img.shields.io/badge/version-1.0.4-green)
+![Version: 1.5.0](https://img.shields.io/badge/version-1.5.0-green)
 ![Follow @rubynorails on Twitter](https://img.shields.io/twitter/follow/rubynorails?label=follow&style=social)
 
 # brutalist
 `brutalist` is a python3-based command-line tool for all platforms that can be used to generate quick and large word lists from one or more sample passwords provided by the user.
 
 ### Use case:
-Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.  If fed the word `password`, `brutalist` will generate 960,944 unique custom permutations of that specific  word, using various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
+Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.  If fed the word `password`, `brutalist` will generate 5,712,768 unique custom permutations of that specific  word, using various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
 
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist.git`
