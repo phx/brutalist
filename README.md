@@ -1,13 +1,18 @@
 ![Platform: ALL](https://img.shields.io/badge/platform-ALL-green)
 ![Dependencies: python3+](https://img.shields.io/badge/dependencies-python3+-blue)
-![Version: 1.5.0](https://img.shields.io/badge/version-1.5.0-green)
+![Version: 1.5.0](https://img.shields.io/badge/version-1.6.0-green)
 ![Follow @rubynorails on Twitter](https://img.shields.io/twitter/follow/rubynorails?label=follow&style=social)
 
 # brutalist
 `brutalist` is a python3-based command-line tool for all platforms that can be used to generate quick and large word lists from one or more sample passwords provided by the user.
 
 ### Use case:
-Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.  If fed the word `password`, `brutalist` will generate 5,712,768 unique custom permutations of that specific  word, using various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
+Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.  If fed the word `password`, `brutalist` can generate millions of unique custom combinations of that specific word, based on user input options.  It can use various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
+
+### Notes:
+Running without the `--limit-special`, `--limit-numbers`, or `--limit` options, the number of results is exponentially increased and may take some time to generate the list.
+
+Running with the `--leet` option will exponentially increase the results, and I have no idea how long it will take, because I have never sat around to wait on it to finish.
 
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist.git`
@@ -22,13 +27,19 @@ You can just as easily execute it where it stands or manually copy it elsewhere 
 
 ## Run:
 ```
-Usage: brutalist <[password] | -i [input file]>
+Usage: brutalist <[password] | -p [password] | -i [input file]> <[extended options]>
 
 Options:
+       [no params]                             takes input from stdin.
+       [string]                                first argument is used as password.
+       -p | --password                         second argument is used as password.
+       -i | -f | --file [input file]           file is used as input.
 
-       [no params]        takes input from stdin.
-       [string]           first argument is used as password.
-       -i [input file]    file is used as input.
+Extended Options:
+       -c | --limit-special | --limit-chars    limits special characters to '!@#$%*-+_'
+       -n | --limit-numbers                    only includes common 1 and 2 digit suffixes + special
+       -l | --limit                            limits both 3 digit numbers and special characters
+            --leet                             includes all leet speak combinations (will increase size and time)
 ```
 ## Examples
 - From the downloaded git repo working directory:
