@@ -247,10 +247,17 @@ if __name__ == '__main__':
     # If only 1 argument that doesn't match options, use argument as password:
     if len(sys.argv) == 2:
         for opt in ['-p', '--password', '-i', '--input', '-f', '--file', '-c', '--limit-special', '--limit-chars', '-n', '--limit-numbers', '-l', '--limit', '--leet']:
-            if opt in sys.argv:
-                flag = True
-        if flag != True:
+             if opt in sys.argv:
+                 flag = True
+        if not flag:
             password_list.append(sys.argv[1].strip())
+        else:
+            try:
+                passwords = [x for x in sys.stdin.readlines()]
+                for password in passwords:
+                    password_list.append(password.strip())
+            except:
+                show_help()
     elif len(sys.argv) >= 3:
         # Check for -p|--password argument:
         for param in ['-p', '--password']:
@@ -356,7 +363,7 @@ if __name__ == '__main__':
         for opt in ['-n', '--limit-numbers', '-l', '--limit']:
             if opt in sys.argv:
                 limit = True
-        if limit != True:
+        if not limit:
             three_digit_suffixes = ["{0:03}".format(i) for i in range(1000)]
             for sub in unique_subs:
                 for suf3 in three_digit_suffixes:
