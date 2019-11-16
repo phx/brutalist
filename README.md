@@ -7,7 +7,9 @@
 `brutalist` is a python3-based command-line tool for all platforms that can be used to generate quick and large word lists from one or more sample passwords provided by the user.
 
 ### Use case:
-Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.  If fed the word `password`, `brutalist` can generate millions of unique custom combinations of that specific word, based on user input options.  It can use various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
+Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.
+If fed the word `password`, `brutalist` can generate up to 6,013,440 unique custom combinations of that specific word.
+It can use various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
 
 ### Notes:
 Running without the `--limit-special`, `--limit-numbers`, or `--limit` options, the number of results is exponentially increased and may take some time to generate the list.
