@@ -334,23 +334,24 @@ if __name__ == '__main__':
                 number_suffixes.append(numbers[ch-1:ch+2])
         number_suffixes.remove('')
 
+        combos = []
         for sub in unique_subs:
-            print(sub)
+            combos.append(sub)
         for sub in unique_subs:
             for num in numbers:
-                print(sub + num)
-                print(sub + num + num)
+                combos.append(sub + num)
+                combos.append(sub + num + num)
         for sub in unique_subs:
             for suf in number_suffixes:
-                print(sub + suf)
+                combos.append(sub + suf)
                 for c in special_characters:
-                    print(sub + suf + c)
+                    combos.append(sub + suf + c)
         for sub in unique_subs:
             for c in special_characters:
-                print(sub + c)
+                combos.append(sub + c)
                 for num in numbers:
-                    print(sub + num + c)
-                    print(sub + num + num + c)
+                    combos.append(sub + num + c)
+                    combos.append(sub + num + num + c)
 
         for opt in ['-n', '--limit-numbers', '-l', '--limit']:
             if opt in sys.argv:
@@ -359,6 +360,10 @@ if __name__ == '__main__':
             three_digit_suffixes = ["{0:03}".format(i) for i in range(1000)]
             for sub in unique_subs:
                 for suf3 in three_digit_suffixes:
+                    combos.append(sub + suf3)
                     for c in special_characters:
-                        print(sub + suf3)
-                        print(sub + suf3 + c)
+                        combos.append(sub + suf3 + c)
+
+        unique_combos = list(set(combos))
+        for password in unique_combos:
+            print(password)
