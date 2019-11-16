@@ -12,9 +12,13 @@ If fed the word `password`, `brutalist` can generate up to 6,013,440 unique cust
 It can use various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
 
 ### Notes:
-Running without the `--limit-special`, `--limit-numbers`, or `--limit` options, the number of results is exponentially increased and may take some time to generate the list.
+Running without the `--limit-special`, `--limit-numbers`, or `--limit` options decreases the number of results to something manageable.
 
-Running with the `--leet` option will exponentially increase the results, and I have no idea how long it will take, because I have never sat around to wait on it to finish.
+Running with the `--leet` option increases the number of results exponentially to something quite large.
+
+The time it takes to return the results depends on the initial password length.
+
+It takes approximately 15 seconds to 2 minutes to run the word `password` under normal conditions, depending on command line options.
 
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist.git`
