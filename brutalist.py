@@ -58,7 +58,7 @@ if '--leet' in sys.argv:
             r'[Tt]': ['T', 't', '7', '+'],
             r'[Uu]': ['U', 'u', '[_]'],
             r'[Vv]': ['V', 'v'],
-            r'[Ww]': ['W', 'w'],
+            r'[Ww]': ['W', 'w', 'vv']
             r'[Xx]': ['X', 'x', '}-{'],
             r'[Yy]': ['Y', 'y', '`/'],
             r'[Zz]': ['Z', 'z', '2']
@@ -189,6 +189,8 @@ def get_subs(ch, char):
                 if lower_char == 'u':
                     subs.append(b + '[_]' + a)
                     resubs(b + '[_]' + a)
+                if lower_char == 'w':
+                    resubs(b + 'vv' + a)
                 if lower_char == 'x':
                     subs.append(b + '}-{' + a)
                     resubs(b + '}-{' + a)
