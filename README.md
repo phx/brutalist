@@ -62,7 +62,7 @@ Going forward, we will reference the command as `brutalist` -- just know that if
 - `stdin` from user input (outputs to `stdout`):
 `brutalist`[type your sample password(s), then hit `Ctrl-D`]
 
-### Runtime samples for using the password example "a":
+### Runtime samples for using the password example "w":
 ```
 ---------------------------------------------------------
 $ time echo w | ./brutalist.py | wc -l
