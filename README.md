@@ -8,8 +8,8 @@
 
 ### Use case:
 Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.
-If fed the word `password`, `brutalist` can generate up to 21,047,040 unique custom combinations of that specific word.
-It can use various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
+If fed the word `password`, `brutalist` can generate up to a few million unique custom combinations for that specific word.
+`brutalist` uses various methods of leet speak substitution, as well as other common special character substitutions, suffixes, and special character additions -- all while keeping the order of the original characters in the password.
 
 ### Notes:
 Running without the `--limit-special`, `--limit-numbers`, or `--limit` options decreases the number of results to something manageable.
