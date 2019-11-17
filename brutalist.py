@@ -99,7 +99,7 @@ def resubs(spass):
     for key in CHARACTERS:
         for x in CHARACTERS[key]:
             tmp = re.sub(key, x, spass)
-            subappend(tmp)
+            subs.append(tmp)
 
 def subappend(tmp):
     tmp = tmp.strip()
