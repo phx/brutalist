@@ -62,43 +62,53 @@ Going forward, we will reference the command as `brutalist` -- just know that if
 - `stdin` from user input (outputs to `stdout`):
 `brutalist`[type your sample password(s), then hit `Ctrl-D`]
 
-### Runtime samples for using the password example "w":
+### Runtime samples for using the password example "password":
 ```
 ---------------------------------------------------------
-$ time echo w | ./brutalist.py | wc -l
-   44440
-
-real    0m0.099s
-user    0m0.080s
-sys    0m0.018s
+$ time echo password | brutalist
+...
+real    0m30.776s
+user    0m23.589s
+sys     0m4.892s
+...
+$ echo password | brutalist | wc -l
+ 7643680
 ---------------------------------------------------------
-$ time echo w | ./brutalist.py --leet | wc -l
-  155540
-
-real    0m0.250s
-user    0m0.225s
-sys    0m0.028s
+$ time echo password | brutalist --leet
+...
+real    1m1.169s
+user    0m41.930s
+sys     0m9.094s
+...
+$ echo password | brutalist | wc -l
+ 13198680
 ---------------------------------------------------------
-$ time echo w | ./brutalist.py --limit-special | wc -l
-   22220
-
-real    0m0.077s
-user    0m0.059s
-sys    0m0.019s
+$ time echo password | brutalist --limit-special
+...
+real    0m16.423s
+user    0m11.681s
+sys     0m2.582s
+...
+$ echo password | brutalist --limit-special | wc -l
+ 3821840
 ---------------------------------------------------------
-$ time echo w | ./brutalist.py --limit-numbers | wc -l
-     780
-
-real    0m0.048s
-user    0m0.032s
-sys    0m0.018s
+$ time echo password | brutalist --limit-numbers
+...
+real    0m0.633s
+user    0m0.439s
+sys     0m0.109s
+...
+$ echo password | brutalist --limit-numbers | wc -l
+  134160
 ---------------------------------------------------------
-$ time echo w | ./brutalist.py --limit | wc -l
-     400
-
-real    0m0.051s
-user    0m0.036s
-sys    0m0.017s
+$ time echo password | brutalist --limit
+...
+real    0m0.352s
+user    0m0.234s
+sys     0m0.059s
+...
+$ echo password | brutalist --limit | wc -l
+   68800
 ---------------------------------------------------------
 ```
 ### 10 random samples from password example "boot":
