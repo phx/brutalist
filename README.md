@@ -1,6 +1,6 @@
 ![Platform: ALL](https://img.shields.io/badge/platform-ALL-green)
 ![Dependencies: python3+](https://img.shields.io/badge/dependencies-python3+-blue)
-![Version: 1.5.0](https://img.shields.io/badge/version-1.6.4-green)
+![Version: 1.5.0](https://img.shields.io/badge/version-1.6.5-green)
 ![Follow @rubynorails on Twitter](https://img.shields.io/twitter/follow/rubynorails?label=follow&style=social)
 
 # brutalist
@@ -17,8 +17,6 @@ Running without the `--limit-special`, `--limit-numbers`, or `--limit` options d
 Running with the `--leet` option increases the number of results exponentially to something quite large.
 
 The time it takes to return the results depends on the initial password length.
-
-It takes approximately 15 seconds to 2 minutes to run the word `password` under normal conditions, depending on command line options.
 
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist.git`
@@ -64,6 +62,45 @@ Going forward, we will reference the command as `brutalist` -- just know that if
 - `stdin` from user input (outputs to `stdout`):
 `brutalist`[type your sample password(s), then hit `Ctrl-D`]
 
+### Runtime samples for using the password example "a":
+```
+---------------------------------------------------------
+hacOS:brutalist phx$ time echo w | ./brutalist.py | wc -l
+   44440
+
+real    0m0.099s
+user    0m0.080s
+sys    0m0.018s
+---------------------------------------------------------
+$ time echo w | ./brutalist.py --leet | wc -l
+  155540
+
+real    0m0.250s
+user    0m0.225s
+sys    0m0.028s
+---------------------------------------------------------
+$ time echo w | ./brutalist.py --limit-special | wc -l
+   22220
+
+real    0m0.077s
+user    0m0.059s
+sys    0m0.019s
+---------------------------------------------------------
+$ time echo w | ./brutalist.py --limit-numbers | wc -l
+     780
+
+real    0m0.048s
+user    0m0.032s
+sys    0m0.018s
+---------------------------------------------------------
+$ time echo w | ./brutalist.py --limit | wc -l
+     400
+
+real    0m0.051s
+user    0m0.036s
+sys    0m0.017s
+---------------------------------------------------------
+```
 
 ### Background
 This program is by no means perfect.  It's quick and dirty, and by no means optimized.  I started out in C before realizing that Python would do a much better job, and it's still extremely fast when it comes to generating these word lists.  Almost instant.
