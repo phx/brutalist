@@ -269,7 +269,7 @@ if __name__ == '__main__':
                 password_list.append(sys.argv[2].strip())
         # Check for file input:
         for param in ['-i', '-f', '--file']:
-            if sys.argv[1] == '-i':
+            if param == sys.argv[1]:
                 password_file = sys.argv[2]
                 with open(password_file, r) as fp:
                     for line in fp:
@@ -284,9 +284,10 @@ if __name__ == '__main__':
 
     # Character limits:
     special_characters = '!@#$%^&*+-=_.;~()[]'
-    for limit in ['l', '-c', '--limit-special', '--limit-chars', '--limit']:
-        if limit in sys.argv:
-            special_characters='!@#$%*-+_'
+    for opt in ['l', '-c', '--limit-special', '--limit-chars', '--limit']:
+        for arg in sys.argv:
+            if opt == arg:
+                special_characters='!@#$%*-+_'
 
     passwords = set(password_list)
 
@@ -344,9 +345,11 @@ if __name__ == '__main__':
             combos.append(sub)
 
         # See if limit is set for numbers:
+        limit = None
         for opt in ['-n', '--limit-numbers', '-l', '--limit']:
-            if opt in sys.argv:
-                limit = True
+            for arg in sys.argv:
+                if opt == arg:
+                    limit = True
 
         # Append single digit numbers and single digit repeating numbers
         for sub in unique_subs:
