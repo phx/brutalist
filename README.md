@@ -101,7 +101,7 @@ user    0m0.036s
 sys    0m0.017s
 ---------------------------------------------------------
 ```
-### 10 Random Samples from Password Example "boot":
+### 10 random samples from password example "boot":
 ```
 $ time echo boot | ./brutalist.py --leet | sort -R | head -10
 13oOT225)
@@ -121,12 +121,12 @@ sys    0m0.491s
 ```
 
 ### Background
-This program is by no means perfect.  It's quick and dirty, and by no means optimized.  I started out in C before realizing that Python would do a much better job, and it's still extremely fast when it comes to generating these word lists.  Almost instant.
+I started out in C before realizing that Python would do a much better job, and it's still pretty fast when it comes to generating these word lists.
 
 I wrote this over the course of a few hours because it was something I had been thinking about that solved a particular use-case I had come across on multiple occasions, and while BurpSuite Pro offers some similar functionality, you have to fool around with it every time to get something close to what you want, as opposed to just running a simple command using `brutalist` . 
 
-### To-Do, Updates, and Contribution
-I plan to add the option to specify the special characters used in the suffix, which can greatly cut down on the number of permutations for those who need shorter lists.  There will be some permutations that are missing, which I may add code for at a later point.  If you want to contribute or clean up the code, feel free to submit a pull request.
+### Contribution
+If you want to contribute or help clean up and optimize some code, feel free to submit a pull request.
 
 ### Disclaimer
 By downloading and running this software, you agree to only use it for ethical purposes and also agree to be held fully liable and accountable for any damage or harm caused by using `brutalist`.
