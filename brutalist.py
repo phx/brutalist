@@ -267,6 +267,14 @@ if __name__ == '__main__':
         for param in ['-p', '--password']:
             if param == sys.argv[1]:
                 password_list.append(sys.argv[2].strip())
+            else:
+                try:
+                    passwords = [x for x in sys.stdin.readlines()]
+                    for password in passwords:
+                        password_list.append(password.strip())
+                except:
+                    show_help()
+
         # Check for file input:
         for param in ['-i', '-f', '--file']:
             if param == sys.argv[1]:
@@ -274,6 +282,13 @@ if __name__ == '__main__':
                 with open(password_file, r) as fp:
                     for line in fp:
                         password_list.append(line.strip())
+            else:
+                try:
+                    passwords = [x for x in sys.stdin.readlines()]
+                    for password in passwords:
+                        password_list.append(password.strip())
+                except:
+                    show_help()
     else:
         try:
             passwords = [x for x in sys.stdin.readlines()]
