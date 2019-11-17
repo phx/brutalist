@@ -253,6 +253,7 @@ if __name__ == '__main__':
              if opt in sys.argv:
                  flag = True
         if not flag:
+            print('flag is false')
             password_list.append(sys.argv[1].strip())
         else:
             try:
@@ -337,37 +338,58 @@ if __name__ == '__main__':
         unique_subs = set(subs)
 
         number_suffixes = []
-        numbers = '0123456789'
-
-        for ch, _ in enumerate(numbers):
-            if 9 > ch >= 0:
-                number_suffixes.append(numbers[ch-1:ch+2])
-        number_suffixes.remove('')
-
         combos = []
+        numbers = '0123456789'
         for sub in unique_subs:
             combos.append(sub)
+
+        # See if limit is set for numbers:
+        for opt in ['-n', '--limit-numbers', '-l', '--limit']:
+            if opt in sys.argv:
+                limit = True
+
+        # Append single digit numbers and single digit repeating numbers
         for sub in unique_subs:
             for num in numbers:
                 combos.append(sub + num)
-                combos.append(sub + num + num)
-        for sub in unique_subs:
-            for suf in number_suffixes:
-                combos.append(sub + suf)
-                for c in special_characters:
-                    combos.append(sub + suf + c)
+                if limit:
+                    combos.append(sub + num + num)
+
+        # Append special character, single digit + char, repeating digit + char
         for sub in unique_subs:
             for c in special_characters:
                 combos.append(sub + c)
                 for num in numbers:
                     combos.append(sub + num + c)
-                    combos.append(sub + num + num + c)
+                    if not limit:
+                        combos.append(sub + num + num + c)
 
-        for opt in ['-n', '--limit-numbers', '-l', '--limit']:
-            if opt in sys.argv:
-                limit = True
-        if not limit:
+        if limit:
+            # Create 3 digit incrementing suffixes:
+            for ch, _ in enumerate(numbers):
+                if 9 > ch >= 0:
+                    number_suffixes.append(numbers[ch-1:ch+2])
+            number_suffixes.remove('')
+
+            # Append 3 digit incrementing suffixes and special characters
+            for sub in unique_subs:
+                for suf in number_suffixes:
+                    combos.append(sub + suf)
+                    for c in special_characters:
+                        combos.append(sub + suf + c)
+
+        else:
+            two_digit_suffixes = ["{0:02}".format(i) for i in range(100)]
             three_digit_suffixes = ["{0:03}".format(i) for i in range(1000)]
+
+            # Append all 2 digit suffix combos and + special char
+            for sub in unique_subs:
+                for suf2 in two_digit_suffixes:
+                    combos.append(sub + suf2)
+                    for c in special_characters:
+                        combos.append(sub + suf2 + c)
+
+            # Append all 3 digit suffix combos and + special char
             for sub in unique_subs:
                 for suf3 in three_digit_suffixes:
                     combos.append(sub + suf3)
