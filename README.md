@@ -101,6 +101,24 @@ user    0m0.036s
 sys    0m0.017s
 ---------------------------------------------------------
 ```
+### 10 Random Samples from Password Example "boot":
+```
+$ time echo boot | ./brutalist.py --leet | sort -R | head -10
+13oOT225)
+3oO7721)
+BOO7791.
+130Ot814%
+b0O+538.
+B0OT059&
+13Oot786=
+3OOt899)
+3OO+631!
+B0O+313]
+
+real    1m40.766s
+user    1m41.305s
+sys    0m0.491s
+```
 
 ### Background
 This program is by no means perfect.  It's quick and dirty, and by no means optimized.  I started out in C before realizing that Python would do a much better job, and it's still extremely fast when it comes to generating these word lists.  Almost instant.
