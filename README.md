@@ -43,7 +43,7 @@ Extended Options:
        -c | --limit-special | --limit-chars    limits special characters to '!@#$%*-+_'
        -n | --limit-numbers                    only includes common 1 and 2 digit suffixes + special
        -l | --limit                            limits both 3 digit numbers and special characters
-            --leet                             includes all leet speak combinations (will increase size and time)
+            --leet                             includes all leet speak combinations (will increase size)
 ```
 ## Examples
 - From the downloaded git repo working directory:
