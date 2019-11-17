@@ -299,7 +299,7 @@ if __name__ == '__main__':
 
     # Character limits:
     special_characters = '!@#$%^&*+-=_.;~()[]'
-    for opt in ['l', '-c', '--limit-special', '--limit-chars', '--limit']:
+    for opt in ['-l', '-c', '--limit-special', '--limit-chars', '--limit']:
         for arg in sys.argv:
             if opt == arg:
                 special_characters='!@#$%*-+_'
