@@ -65,7 +65,7 @@ Going forward, we will reference the command as `brutalist` -- just know that if
 ### Runtime samples for using the password example "a":
 ```
 ---------------------------------------------------------
-hacOS:brutalist phx$ time echo w | ./brutalist.py | wc -l
+$ time echo w | ./brutalist.py | wc -l
    44440
 
 real    0m0.099s
