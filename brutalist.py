@@ -253,6 +253,7 @@ if __name__ == '__main__':
 
     # If only 1 argument that doesn't match options, use argument as password:
     if len(sys.argv) == 2:
+        flag = None
         for opt in ['-p', '--password', '-i', '--input', '-f', '--file', '-c', '--limit-special', '--limit-chars', '-n', '--limit-numbers', '-l', '--limit', '--leet']:
              if opt in sys.argv:
                  flag = True
@@ -275,13 +276,14 @@ if __name__ == '__main__':
         for param in ['-i', '-f', '--file']:
             if param == sys.argv[1]:
                 password_file = sys.argv[2]
-                print(password_file)
-                try:
-                    with open(password_file, 'r') as fp:
-                        for line in fp:
-                            password_list.append(line.strip())
-                except:
-                    show_help()
+                file = True
+        if file:
+            try:
+                with open(password_file, 'r') as fp:
+                    for line in fp:
+                        password_list.append(line.strip())
+            except:
+                show_help()
     else:
         try:
             passwords = [x for x in sys.stdin.readlines()]
@@ -407,6 +409,6 @@ if __name__ == '__main__':
                     for c in special_characters:
                         combos.append(sub + suf3 + c)
 
-        unique_combos = list(set(combos))
-        for password in unique_combos:
-            print(password)
+    unique_combos = list(set(combos))
+    for password in unique_combos:
+        print(password)
