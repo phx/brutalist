@@ -256,8 +256,6 @@ if __name__ == '__main__':
         for opt in ['-p', '--password', '-i', '--input', '-f', '--file', '-c', '--limit-special', '--limit-chars', '-n', '--limit-numbers', '-l', '--limit', '--leet']:
              if opt in sys.argv:
                  flag = True
-             else:
-                 flag = False
         if not flag:
             password_list.append(sys.argv[1].strip())
         else:
@@ -272,26 +270,16 @@ if __name__ == '__main__':
         for param in ['-p', '--password']:
             if param == sys.argv[1]:
                 password_list.append(sys.argv[2].strip())
-            else:
-                try:
-                    passwords = [x for x in sys.stdin.readlines()]
-                    for password in passwords:
-                        password_list.append(password.strip())
-                except:
-                    show_help()
 
         # Check for file input:
         for param in ['-i', '-f', '--file']:
             if param == sys.argv[1]:
                 password_file = sys.argv[2]
-                with open(password_file, r) as fp:
-                    for line in fp:
-                        password_list.append(line.strip())
-            else:
+                print(password_file)
                 try:
-                    passwords = [x for x in sys.stdin.readlines()]
-                    for password in passwords:
-                        password_list.append(password.strip())
+                    with open(password_file, 'r') as fp:
+                        for line in fp:
+                            password_list.append(line.strip())
                 except:
                     show_help()
     else:
