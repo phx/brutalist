@@ -34,65 +34,6 @@ def show_help():
     print()
     sys.exit()
 
-if '--leet' in sys.argv:
-    CHARACTERS = {
-            r'[Aa]': ['A', 'a', '4', '@'],
-            r'[Bb]': ['B', 'b', '3', '13'],
-            r'[Cc]': ['C', 'c', '('],
-            r'[Dd]': ['D', 'd', '[)'],
-            r'[Ee]': ['E', 'e', '3'],
-            r'[Ff]': ['F', 'f', '|='],
-            r'[Gg]': ['G', 'g', '6'],
-            r'[Hh]': ['H', 'h', '|-|'],
-            r'[Ii]': ['I', 'i', '1', '|'],
-            r'[Jj]': ['J', 'j', '.]'],
-            r'[Kk]': ['K', 'k', '|<'],
-            r'[Ll]': ['L', 'l', '1', '|'],
-            r'[Mm]': ['M', 'm', '|Y|'],
-            r'[Nn]': ['N', 'n', '/V'],
-            r'[Oo]': ['O', 'o', '0'],
-            r'[Pp]': ['P', 'p', '|>'],
-            r'[Qq]': ['Q', 'q', '0,'],
-            r'[Rr]': ['R', 'r', '|2'],
-            r'[Ss]': ['S', 's', '5', '$'],
-            r'[Tt]': ['T', 't', '7', '+'],
-            r'[Uu]': ['U', 'u', '[_]'],
-            r'[Vv]': ['V', 'v'],
-            r'[Ww]': ['W', 'w', 'vv', 'uu'],
-            r'[Xx]': ['X', 'x', '}-{'],
-            r'[Yy]': ['Y', 'y', '`/'],
-            r'[Zz]': ['Z', 'z', '2']
-        }
-else:
-    CHARACTERS = {
-            r'[Aa]': ['A', 'a', '4', '@'],
-            r'[Bb]': ['B', 'b', '3'],
-            r'[Cc]': ['C', 'c'],
-            r'[Dd]': ['D', 'd'],
-            r'[Ee]': ['E', 'e', '3'],
-            r'[Ff]': ['F', 'f'],
-            r'[Gg]': ['G', 'g', '6'],
-            r'[Hh]': ['H', 'h'],
-            r'[Ii]': ['I', 'i', '1'],
-            r'[Jj]': ['J', 'j'],
-            r'[Kk]': ['K', 'k'],
-            r'[Ll]': ['L', 'l', '1'],
-            r'[Mm]': ['M', 'm'],
-            r'[Nn]': ['N', 'n'],
-            r'[Oo]': ['O', 'o', '0'],
-            r'[Pp]': ['P', 'p'],
-            r'[Qq]': ['Q', 'q'],
-            r'[Rr]': ['R', 'r'],
-            r'[Ss]': ['S', 's', '5', '$'],
-            r'[Tt]': ['T', 't'],
-            r'[Uu]': ['U', 'u'],
-            r'[Vv]': ['V', 'v'],
-            r'[Ww]': ['W', 'w'],
-            r'[Xx]': ['X', 'x'],
-            r'[Yy]': ['Y', 'y'],
-            r'[Zz]': ['Z', 'z', '2']
-        }
-
 
 def resubs(spass):
     spass = spass.strip()
@@ -101,11 +42,13 @@ def resubs(spass):
             tmp = re.sub(key, x, spass)
             subs.append(tmp)
 
+
 def subappend(tmp):
     tmp = tmp.strip()
     if tmp not in subs:
         subs.append(tmp)
         resubs(tmp)
+
 
 def get_subs(ch, char):
     spass = before + char + after
@@ -239,7 +182,68 @@ def get_subs(ch, char):
                     subs.append(b + '2' + a)
                     resubs(b + '2' + a)
 
+
 if __name__ == '__main__':
+
+    if '--leet' in sys.argv:
+        CHARACTERS = {
+                r'[Aa]': ['A', 'a', '4', '@'],
+                r'[Bb]': ['B', 'b', '3', '13'],
+                r'[Cc]': ['C', 'c', '('],
+                r'[Dd]': ['D', 'd', '[)'],
+                r'[Ee]': ['E', 'e', '3'],
+                r'[Ff]': ['F', 'f', '|='],
+                r'[Gg]': ['G', 'g', '6'],
+                r'[Hh]': ['H', 'h', '|-|'],
+                r'[Ii]': ['I', 'i', '1', '|'],
+                r'[Jj]': ['J', 'j', '.]'],
+                r'[Kk]': ['K', 'k', '|<'],
+                r'[Ll]': ['L', 'l', '1', '|'],
+                r'[Mm]': ['M', 'm', '|Y|'],
+                r'[Nn]': ['N', 'n', '/V'],
+                r'[Oo]': ['O', 'o', '0'],
+                r'[Pp]': ['P', 'p', '|>'],
+                r'[Qq]': ['Q', 'q', '0,'],
+                r'[Rr]': ['R', 'r', '|2'],
+                r'[Ss]': ['S', 's', '5', '$'],
+                r'[Tt]': ['T', 't', '7', '+'],
+                r'[Uu]': ['U', 'u', '[_]'],
+                r'[Vv]': ['V', 'v'],
+                r'[Ww]': ['W', 'w', 'vv', 'uu'],
+                r'[Xx]': ['X', 'x', '}-{'],
+                r'[Yy]': ['Y', 'y', '`/'],
+                r'[Zz]': ['Z', 'z', '2']
+            }
+    else:
+        CHARACTERS = {
+                r'[Aa]': ['A', 'a', '4', '@'],
+                r'[Bb]': ['B', 'b', '3'],
+                r'[Cc]': ['C', 'c'],
+                r'[Dd]': ['D', 'd'],
+                r'[Ee]': ['E', 'e', '3'],
+                r'[Ff]': ['F', 'f'],
+                r'[Gg]': ['G', 'g', '6'],
+                r'[Hh]': ['H', 'h'],
+                r'[Ii]': ['I', 'i', '1'],
+                r'[Jj]': ['J', 'j'],
+                r'[Kk]': ['K', 'k'],
+                r'[Ll]': ['L', 'l', '1'],
+                r'[Mm]': ['M', 'm'],
+                r'[Nn]': ['N', 'n'],
+                r'[Oo]': ['O', 'o', '0'],
+                r'[Pp]': ['P', 'p'],
+                r'[Qq]': ['Q', 'q'],
+                r'[Rr]': ['R', 'r'],
+                r'[Ss]': ['S', 's', '5', '$'],
+                r'[Tt]': ['T', 't'],
+                r'[Uu]': ['U', 'u'],
+                r'[Vv]': ['V', 'v'],
+                r'[Ww]': ['W', 'w'],
+                r'[Xx]': ['X', 'x'],
+                r'[Yy]': ['Y', 'y'],
+                r'[Zz]': ['Z', 'z', '2']
+            }
+
 
     for help in ['help', '-help', '--help', '-h']:
         if help in sys.argv:
@@ -252,8 +256,9 @@ if __name__ == '__main__':
         for opt in ['-p', '--password', '-i', '--input', '-f', '--file', '-c', '--limit-special', '--limit-chars', '-n', '--limit-numbers', '-l', '--limit', '--leet']:
              if opt in sys.argv:
                  flag = True
+             else:
+                 flag = False
         if not flag:
-            print('flag is false')
             password_list.append(sys.argv[1].strip())
         else:
             try:
