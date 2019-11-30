@@ -7,7 +7,7 @@
 ![brutalist](./brutalist.png?raw=true)
 
 # brutalist
-`brutalist` is a python3-based command-line tool for all platforms that can be used to generate quick and large word lists from one or more sample passwords provided by the user.
+`brutalist` is a python3-based command line tool for all platforms that can be used to generate quick and large word lists from one or more sample passwords provided by the user.
 
 ### Use case:
 Let's say you come across an outdated password in an old credential dump, but the user has since updated their password (`password`) to `P@$$w0rd123!`.
