@@ -273,6 +273,7 @@ if __name__ == '__main__':
                 password_list.append(sys.argv[2].strip())
 
         # Check for file input:
+        file = None
         for param in ['-i', '-f', '--file']:
             if param == sys.argv[1]:
                 password_file = sys.argv[2]
