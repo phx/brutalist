@@ -1,6 +1,6 @@
 ![Platform: ALL](https://img.shields.io/badge/platform-ALL-green)
 ![Dependencies: python3+](https://img.shields.io/badge/dependencies-python3+-blue)
-![Version: 1.6.8](https://img.shields.io/badge/version-1.6.8-green)
+![Version: 1.6.9](https://img.shields.io/badge/version-1.6.9-green)
 ![Follow @rubynorails on Twitter](https://img.shields.io/twitter/follow/rubynorails?label=follow&style=social)
 
 
@@ -61,9 +61,7 @@ Going forward, we will reference the command as `brutalist` -- just know that if
 - `stdin` from input redirection, `stdout` to a file:
 `brutalist < small_list.txt > huge_list.txt`
 - input file as argument, write to both file and `stdout`:
-`brutalist -i /path/to/small_list.txt | tee huge_list.txt`
-- `stdin` from user input (outputs to `stdout`):
-`brutalist`[type your sample password(s), then hit `Ctrl-D`]
+`brutalist -f /path/to/small_list.txt | tee huge_list.txt`
 
 ### Runtime samples for using the password example "password":
 ```
