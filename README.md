@@ -1,6 +1,6 @@
 ![Platform: ALL](https://img.shields.io/badge/platform-ALL-green)
 ![Dependencies: python3+](https://img.shields.io/badge/dependencies-python3+-blue)
-![Version: 1.6.7](https://img.shields.io/badge/version-1.6.7-green)
+![Version: 1.6.8](https://img.shields.io/badge/version-1.6.8-green)
 ![Follow @rubynorails on Twitter](https://img.shields.io/twitter/follow/rubynorails?label=follow&style=social)
 
 
