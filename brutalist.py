@@ -253,7 +253,12 @@ if __name__ == '__main__':
 
     # If only 1 argument that doesn't match options, use argument as password:
     if len(sys.argv) <= 1:
-        show_help()
+        try:
+            passwords = [x for x in sys.stdin.readlines()]
+            for password in passwords:
+                password_list.append(password.strip())
+        except:
+            show_help()
     elif len(sys.argv) == 2:
         flag = None
         for opt in ['-p', '--password', '-i', '--input', '-f', '--file', '-c', '--limit-special', '--limit-chars', '-n', '--limit-numbers', '-l', '--limit', '--leet']:
