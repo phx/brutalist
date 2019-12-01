@@ -294,15 +294,20 @@ if __name__ == '__main__':
             show_help()
 
     # Character limits:
+    flag = None
     special_characters = '!@#$%^&*+-=_.;~()[]'
     for opt in ['-l', '-c', '--limit-special', '--limit-chars', '--limit']:
         for arg in sys.argv:
             if opt == arg:
-                special_characters='!@#$%*-+_'
+                flag = True
+    if flag:
+        special_characters='!@#$%*-+_'
 
     passwords = set(password_list)
 
     subs = []
+    number_suffixes = []
+    combos = []
 
     for password in passwords:
         resubs(password)
@@ -349,8 +354,6 @@ if __name__ == '__main__':
 
         unique_subs = set(subs)
 
-        number_suffixes = []
-        combos = []
         numbers = '0123456789'
         for sub in unique_subs:
             combos.append(sub)
