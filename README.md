@@ -1,6 +1,6 @@
 ![Platform: ALL](https://img.shields.io/badge/platform-ALL-green)
 ![Dependencies: python3+](https://img.shields.io/badge/dependencies-python3+-blue)
-![Version: 1.7.0](https://img.shields.io/badge/version-1.7.0-green)
+![Version: 1.7.1](https://img.shields.io/badge/version-1.7.1-green)
 ![Follow @rubynorails on Twitter](https://img.shields.io/twitter/follow/rubynorails?label=follow&style=social)
 
 
@@ -21,16 +21,19 @@ Running with the `--leet` option increases the number of results exponentially t
 
 The time it takes to return the results depends on the initial password length.
 
-## Install via Git:
-1. `git clone https://github.com/phx/brutalist.git`
-2. `cd brutalist`
-3. `sudo cp brutalist.py /usr/local/bin/brutalist`
-
-You can just as easily execute it where it stands or manually copy it elsewhere in your `$PATH`.
+## Install via `pip`:
+`pip3 install brutalist`
 
 ## Install via Homebrew on MacOS:
 1. `brew tap phx/brutalist`
 2. `brew install brutalist`
+
+## Install via Git:
+1. `git clone https://github.com/phx/brutalist`
+2. `cd brutalist`
+3. `sudo cp brutalist /usr/local/bin/brutalist`
+
+You can just as easily execute it where it stands or manually copy it elsewhere in your `$PATH`.
 
 ## Run:
 ```
