@@ -22,7 +22,7 @@ Running with the `--leet` option increases the number of results exponentially t
 The time it takes to return the results depends on the initial password length.
 
 ## Install from PyPI:
-`pip3 install brutalist`
+`pip3 install --upgrade brutalist`
 
 ## Install via Homebrew on MacOS:
 1. `brew tap phx/brutalist`
