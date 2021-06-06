@@ -30,7 +30,7 @@ The time it takes to return the results depends on the initial password length.
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist`
 2. `cd brutalist`
-3. `sudo cp brutalist /usr/local/bin/brutalist`
+3. `sudo cp brutalist /usr/local/bin/`
 
 You can just as easily execute it where it stands or manually copy it elsewhere in your `$PATH`.
 
