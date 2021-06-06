@@ -50,13 +50,8 @@ Extended Options:
        -l | --limit                            limits both 3 digit numbers and special characters
             --leet                             includes all leet speak combinations (will increase size)
 ```
+
 ## Examples
-- From the downloaded git repo working directory:
- `./brutalist.py [a single password]`
-- Installed via `homebrew` or copied to your `$PATH` as `brutalist`:
-` brutalist [a single password]`
- 
-Going forward, we will reference the command as `brutalist` -- just know that if it's not in your `$PATH`, it will have to be run in-place as `./brutalist.py`.
 
 - `stdin`from pipe, `stdout` to a file:
 `cat small_list.txt | brutalist > huge_list.txt`
