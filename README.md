@@ -25,8 +25,7 @@ The time it takes to return the results depends on the initial password length.
 `pip3 install --upgrade brutalist`
 
 ## Install via Homebrew on MacOS:
-1. `brew tap phx/brutalist`
-2. `brew install brutalist`
+`brew install phx/brutalist/brutalist`
 
 ## Install via Git:
 1. `git clone https://github.com/phx/brutalist`
